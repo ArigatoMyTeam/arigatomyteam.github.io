@@ -1,0 +1,36 @@
+---
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import Layout from '../layouts/BlogPost.astro';
+import { AUTHOR, GITHUB_URL } from '../consts';
+---
+
+<Layout
+	title="自己紹介"
+	description={`${AUTHOR} の自己紹介`}
+	pubDate={new Date('2026-10-22')}
+	heroImage={AboutHeroImage}
+>
+	<!-- ここは仮の文章です。自分の言葉に書き換えてください -->
+	<p>
+		はじめまして、{AUTHOR} です。このサイトでは、自分で作ったものや、日々の学びを記録しています。
+	</p>
+
+	<h2>興味のあること</h2>
+	<ul>
+		<li>AI・LLM：新しいモデルやツールを試すこと</li>
+		<li>Web開発：アイデアを形にすること</li>
+		<li>マーケット：日本株・米国株、特に半導体関連の動向</li>
+	</ul>
+
+	<h2>スキル</h2>
+	<ul>
+		<li>（例）HTML / CSS / JavaScript</li>
+		<li>（例）Astro</li>
+		<li>（例）Git / GitHub</li>
+	</ul>
+
+	<h2>連絡先</h2>
+	<p>
+		<a href={GITHUB_URL} target="_blank">GitHub</a>
+	</p>
+</Layout>
