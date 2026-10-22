@@ -11,46 +11,67 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="ja">
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: 100%;
 				max-width: 100%;
-				margin: 0;
+				padding: 0;
 			}
 			.hero-image {
 				width: 100%;
+				max-width: 880px;
+				margin: 2em auto 0;
+				padding: 0 1.5em;
 			}
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+				border: 1px solid var(--border);
 			}
 			.prose {
 				width: 720px;
-				max-width: calc(100% - 2em);
+				max-width: 100%;
 				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+				padding: 3em 1.5em 4em;
 			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
+				margin-bottom: 2.5em;
+				padding-bottom: 2em;
+				border-bottom: 1px solid var(--border);
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 0.3em 0 0 0;
 			}
 			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: var(--text-faint);
+				font-family: var(--font-code);
+				font-size: 0.85em;
 			}
 			.last-updated-on {
-				font-style: italic;
+				display: inline;
+				margin-left: 1em;
+			}
+			.prose :global(h2) {
+				margin-top: 2.2em;
+				font-size: 1.45em;
+			}
+			.prose :global(h3) {
+				margin-top: 1.8em;
+			}
+			.prose :global(p),
+			.prose :global(ul),
+			.prose :global(ol) {
+				margin-bottom: 1.4em;
+			}
+			.prose :global(li) {
+				margin-bottom: 0.3em;
+			}
+			.prose :global(li::marker) {
+				color: var(--accent);
 			}
 		</style>
 	</head>
@@ -73,7 +94,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							)}
 						</div>
 						<h1>{title}</h1>
-						<hr />
 					</div>
 					<slot />
 				</div>

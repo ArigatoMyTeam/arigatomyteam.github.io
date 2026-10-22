@@ -1,11 +1,13 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import '@fontsource-variable/inter';
+import '@fontsource-variable/noto-sans-jp';
+import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
 import FallbackImage from '../assets/blog-placeholder-3.jpg';
 import { SITE_TITLE } from '../consts';
-import { Font } from 'astro:assets';
 
 interface Props {
 	title: string;
@@ -32,7 +34,8 @@ const { title, description, image = FallbackImage } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
-<Font cssVariable="--font-atkinson" preload />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#0a0b10" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

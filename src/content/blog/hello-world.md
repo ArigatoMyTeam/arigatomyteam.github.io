@@ -2,7 +2,6 @@
 title: 'サイトを作りました'
 description: 'Astro と GitHub Pages で個人サイトを始めました。'
 pubDate: '2026-10-22'
-heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
 個人サイトを作りました。ここでは、作ったものや日々の学びを記録していきます。

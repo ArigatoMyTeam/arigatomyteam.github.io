@@ -15,43 +15,55 @@ const { title, description, tags, url, repo } = Astro.props.data;
 		</ul>
 	)}
 	<div class="links">
-		{url && <a href={url} target="_blank">サイトを見る</a>}
-		{repo && <a href={repo} target="_blank">ソースコード</a>}
+		{url && <a href={url} target="_blank">サイトを見る ↗</a>}
+		{repo && <a href={repo} target="_blank">ソースコード ↗</a>}
 	</div>
 </article>
 <style>
 	.card {
-		padding: 1.25em 1.5em;
-		border-radius: 12px;
-		background: white;
-		box-shadow: var(--box-shadow);
+		position: relative;
+		height: 100%;
+		padding: 1.5em;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+		transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+	}
+	.card:hover {
+		border-color: rgba(139, 124, 255, 0.5);
+		transform: translateY(-3px);
+		box-shadow: 0 12px 40px -12px rgba(139, 124, 255, 0.35);
 	}
 	h3 {
-		margin: 0 0 0.4em 0;
-		font-size: 1.25em;
+		margin: 0 0 0.5em 0;
+		font-size: 1.15em;
 	}
 	p {
-		margin: 0 0 0.8em 0;
-		color: rgb(var(--gray-dark));
+		margin: 0 0 1em 0;
+		color: var(--text-muted);
+		font-size: 0.93em;
 	}
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.4em;
-		margin: 0 0 0.8em 0;
+		margin: 0 0 1em 0;
 		padding: 0;
 		list-style: none;
 	}
 	.tags li {
-		padding: 0.1em 0.6em;
+		padding: 0.15em 0.65em;
+		border: 1px solid var(--border-strong);
 		border-radius: 999px;
-		background: color-mix(in srgb, var(--accent) 10%, white);
-		color: var(--accent-dark);
-		font-size: 0.8em;
+		color: var(--text-muted);
+		font-family: var(--font-code);
+		font-size: 0.72em;
 	}
 	.links {
 		display: flex;
-		gap: 1em;
-		font-size: 0.9em;
+		flex-wrap: wrap;
+		gap: 0.4em 1.2em;
+		font-size: 0.88em;
+		white-space: nowrap;
 	}
 </style>
