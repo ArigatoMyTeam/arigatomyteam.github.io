@@ -26,13 +26,13 @@ const { title, description, tags, url, repo } = Astro.props.data;
 		padding: 1.5em;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+		background: var(--card-bg);
 		transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 	}
 	.card:hover {
 		border-color: rgba(139, 124, 255, 0.5);
 		transform: translateY(-3px);
-		box-shadow: 0 12px 40px -12px rgba(139, 124, 255, 0.35);
+		box-shadow: 0 12px 40px -12px var(--card-glow);
 	}
 	h3 {
 		margin: 0 0 0.5em 0;

@@ -34,8 +34,16 @@ const { title, description, image = FallbackImage } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
-<meta name="color-scheme" content="dark" />
-<meta name="theme-color" content="#0a0b10" />
+<meta name="color-scheme" content="dark light" />
+
+<!-- 保存されたテーマを描画前に適用（ちらつき防止）。初期値はダーク -->
+<script is:inline>
+	try {
+		if (localStorage.getItem('theme') === 'light') {
+			document.documentElement.dataset.theme = 'light';
+		}
+	} catch {}
+</script>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
